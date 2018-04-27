@@ -4,18 +4,15 @@ from django.http import HttpResponse
 
 from django.core.mail import send_mail
 from django.conf import settings
-
 from .forms import ContactForm
+from django.views.generic import View, TemplateView 
 
-def index(request):
-	#return HttpResponse('Hello World')
-	#textos = ['rafael 1', 'rafael 2', 'rafael 3']
-	#context = {
-	#	'title': 'django e-commerce',
-	#	'textos' : textos,
-	#	'categories': Category.objects.all(),
-	#}
-	return render(request, 'index.html')
+
+class IndexView(TemplateView):
+	template_name = 'index.html'
+
+index = IndexView.as_view()
+
 
 
 def contact(request):
