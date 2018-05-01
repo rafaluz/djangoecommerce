@@ -22,7 +22,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 #SECRET_KEY = '-!6q^b1&-xer+zrc+!oxg==xi*_ffe^i%zy1w$e=%q+yuduijz'
-SECRET_KEY = os.getenv('SECRET_KEY', 'rafaelluzaraujo')
+SECRET_KEY = os.getenv('SECRET_KEY', '123')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
