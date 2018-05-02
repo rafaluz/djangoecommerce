@@ -5,8 +5,9 @@ from django.http import HttpResponse
 from django.core.mail import send_mail
 from django.conf import settings
 from .forms import ContactForm
-from django.views.generic import View, TemplateView 
-
+from django.views.generic import View, TemplateView, CreateView 
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import get_user_model
 
 class IndexView(TemplateView):
 	template_name = 'index.html'
@@ -27,3 +28,7 @@ def contact(request):
 	}
 	return render(request, 'contact.html', context)
 
+class RegisterVirw(CreateView):
+
+	form_class = UserCreationForm
+	template_name = 'register.html'
